@@ -1,4 +1,4 @@
-<img src="images/banner2.png">
+<img src="https://github.com/WinterSoldier13/Hacktoberfest/blob/master/images/banner2.png?raw=true">
 ---
 # [HacktoberFest 2020](https://hacktoberfest.digitalocean.com/)
 
