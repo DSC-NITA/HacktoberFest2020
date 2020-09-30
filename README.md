@@ -14,7 +14,7 @@
 
 
 # Projects in which you can contribute
-[Projects for Contribution](https://github.com/search?q=label%3Ahacktoberfest+state%3Aopen+no%3Aassignee+is%3Aissue&type=Issues) -- Check out here
+You can contribute to this very project :)
 
 # Tutorials by Digital Ocean
 
