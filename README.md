@@ -31,3 +31,29 @@ You can contribute to this very project :)
 # How to rebase and update Pull Request
 [Rebasing and Updating Pull Request](https://www.digitalocean.com/community/tutorials/how-to-rebase-and-update-a-pull-request)
 
+# Git video tutorials
+[Full Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR)
+
+[Why use Git?](https://www.youtube.com/watch?v=3RjQznt-8kE&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=1)
+
+[Installing Git](https://www.youtube.com/watch?v=MFtsLRphqDM&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=2)
+
+[How Git works](https://www.youtube.com/watch?v=iNP_KmOFqXs&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=3)
+
+[Creating a Repository](https://www.youtube.com/watch?v=v0Ch3yWQ-Zc&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=4)
+
+[Staging files](https://www.youtube.com/watch?v=KngvG8WzYLU&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=5)
+
+[Making Commits](https://www.youtube.com/watch?v=Fhgga2s_RmM&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=6)
+
+[Undoing Things](https://www.youtube.com/watch?v=RIYrfkZjWmA&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=7)
+
+[Git Branches](https://www.youtube.com/watch?v=QV0kVNvkMxc&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=8)
+
+[Merging Branches (& conflicts)](https://www.youtube.com/watch?v=XX-Kct0PfFc&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=9)
+
+[Introduction to GitHub](https://www.youtube.com/watch?v=fQLK8Ib_SKk&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=10)
+
+[Collaborating on GitHub](https://www.youtube.com/watch?v=MnUd31TvBoU&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=11)
+
+[Forking & Contributing](https://www.youtube.com/watch?v=HbSjyU2vf6Y&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=12)
