@@ -5,32 +5,31 @@
 # [HacktoberFest 2020](https://hacktoberfest.digitalocean.com/)
 
 ## What is HacktoberFest?
-**`Hacktoberfest`** is an `open-source` competition open to everyone in our global community. Whether you’re a developer, student learning to code, event host, or company of any size, you can help drive growth of open source and make positive contributions to an ever-growing community. All backgrounds and skill levels are encouraged to complete the challenge.
+**`Hacktoberfest`** is an `open-source competition` open to everyone in our global community. Whether you’re a developer, student learning to code, event host, or company of any size, you can help drive growth of open source and make positive contributions to an ever-growing community. All backgrounds and skill levels are encouraged to complete the challenge.
 
 1. **`Hacktoberfest`** is a celebration open to everyone in our global community.
-2. Pull requests can be made in any GitHub-hosted repositories/projects.
-3. You can sign up anytime between October 1 and October 31.
+2. `Pull requests` can be made in any `GitHub-hosted` repositories/projects.
+3. You can sign up anytime between `October 1` and `October 31`.
 
-## Rules
+## Rules:
 To earn your **`Hacktoberfest T-Shirt`** or tree reward, you must register and make four valid pull requests (PRs) between `October 1-31` (in any time zone). PRs can be made to any public repo on GitHub, not only the ones with issues labeled **`Hacktoberfest`**. If a `maintainer` reports your pull request as `spam` or behavior not in line with the project’s code of conduct, you will be `ineligible` to participate. This year, the first **`70,000`** participants who successfully complete the challenge will be eligible to receive a `prize`.
 
-
 ## Projects in which you can contribute:
-- Any github repository 
+- Any `github` repository 
 - For the sake of convinience, you can contribute to this very project :)
 
-## Getting started with git
+## Getting started with git:
 - [Git Tutorial](https://www.digitalocean.com/community/tutorials/how-to-contribute-to-open-source-getting-started-with-git)
 - [Git CheatSheet](https://www.digitalocean.com/community/cheatsheets/how-to-use-git-a-reference-guide)
 
-## How to create a Pull Request
+## How to create a Pull Request:
 - [Creating Pull Request](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github)
 
-## How to rebase and update Pull Request
+## How to rebase and update Pull Requests?
 - [Rebasing and Updating Pull Request](https://www.digitalocean.com/community/tutorials/how-to-rebase-and-update-a-pull-request)
 
 ## Git Video tutorials `(Extras)`
-- [Full Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR)
+- [Full Playlist of Git for beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR)
 - [Why use Git?](https://www.youtube.com/watch?v=3RjQznt-8kE&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=1)
 - [Installing Git](https://www.youtube.com/watch?v=MFtsLRphqDM&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=2)
 - [How Git works](https://www.youtube.com/watch?v=iNP_KmOFqXs&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=3)
