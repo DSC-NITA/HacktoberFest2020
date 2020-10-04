@@ -43,9 +43,9 @@
        int strptr=0,patptr=0;
        while(strptr<strlen){
     		if(str.charAt(strptr)==pat.charAt(patptr)){
-                        // if charcter in string equals character in pattern.
+                        // if character in string equals character in pattern.
     			if(patptr==patlen-1){
-                                //if we are at last charcter in pattern => we found a substring in str equals to pattern.
+                                //if we are at last character in pattern => we found a substring in str equals to pattern.
       				occurences.add(strptr-patlen+1);
     				patptr=preSuffArr[patptr-1]+1;
     			}else{
