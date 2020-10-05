@@ -1,20 +1,18 @@
-
 # As google won't let you login from an automated script so used stackoverflow insted of Google
-# Only dependency needed is selenium (pip install selenium) and
-# chromedriver(As I used Chrome browser for this download it from https://chromedriver.chromium.org/
-# extract the zip from above link and paste the path at line 17 executable_path = " path " like  "C:\Drivers\chromedriver.exe"
-# put meeting link in line 19 , your gmail in line 26 and password in line 28
+# Only dependency needed is selenium and webdriver_manager (pip install selenium webdriver_manager)
+# put meeting link in line 17 , your gmail in line 24 and password in line 26
 # Thats it you are ready to rock
 
 # Additionally you can add this script to the task scheduler(windows) to run it automatically at time of meeting
 
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager #Use to initialize driver in a better way without having chromedriver path mentioned. 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 
-driver = webdriver.Chrome(executable_path="Your path")
+driver = webdriver.Chrome(ChromeDriverManager().install())  #This installs or finds the new version of chrome driver if not available and links to path automatically.
 driver.implicitly_wait(5)
 meet_link ="meet link"
 
