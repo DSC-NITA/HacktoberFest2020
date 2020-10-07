@@ -1,13 +1,20 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+from functools import cmp_to_key
+class Player:
+    def __init__(self, name, score):
+        self.name=name
+        self.score=score
+        
+    def __repr__(self):
+        pass
+        
+    def comparator(a, b):
+        if a.score < b.score:
+            return 1
+        elif a.score > b.score:
+            return -1
+        elif a.name > b.name:
+            return 1
+        elif a.name < b.name:
+            return -1
+        return 0
 
-
-num=int(input())
-new=list()
-for i in range(num):
-    q=list(map(int,input().split()))
-    if q[0]==1:
-        new.append(q[1])
-    elif q[0]==2:
-        new.pop(0)
-    elif q[0]==3:
-        print(new[0])
