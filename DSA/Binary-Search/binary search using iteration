@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+   int size,key,low,high,mid,i,c=0;
+   cout<<"enter the size"<<endl;
+   cin>>size;
+   cout<<"enter the element to be searched"<<endl;
+   cin>>key;
+   int arr[size];
+   cout<<"enter the element in an array"<<endl;
+   for(i=0;i<size;i++)## taking input in an array in sorted order
+   {
+       cin>>arr[i];
+   }
+   low=0;high=size-1;
+   while(low<=high)## while condition
+   {
+       mid=low+high/2;
+       if(arr[mid]==key)
+       {
+           c=1;
+           break;
+       }
+       else if(arr[mid]<key)
+       {
+           high=mid-1;
+       }
+       else
+       {
+           low=mid+1;
+       }
+   }
+   if(c==1)
+   {
+       cout<<"element found at index-> "<<mid;
+       
+   }
+   else
+   {
+       cout<<"not found";
+   }
+}
+
