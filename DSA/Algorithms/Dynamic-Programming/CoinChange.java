@@ -1,5 +1,14 @@
 // Problem Link :https://practice.geeksforgeeks.org/problems/coin-change2448/1
 // This is Coin change problem.
+/*
+  Statement: 
+        Given a value N, find the number of ways to make change for N cents, if we have infinite supply of each of S = { S1, S2, .. , SM } valued coins. 
+        Example :
+         Input:
+          n = 4 , m = 3
+          S[] = {1,2,3}
+          Output: 4
+*/
 // I am giving 3 approaches from brute force to dp solution.
 
 // 1. Brute Force(Recursion) =>TLE
