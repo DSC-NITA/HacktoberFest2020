@@ -1,0 +1,139 @@
+#include<iostream>
+#include<queue>
+#include<bits/stdc++.h>
+using namespace std;
+class tree
+{  
+    public:
+    int data;
+    tree *left,*right;
+};
+tree *newnode(int idata)
+{
+    tree *newptr=new tree();
+    newptr->data=idata;
+    newptr->left=NULL;
+    newptr->right=NULL;
+    return newptr;
+}
+tree *insert(tree *root,int idata)
+{
+    if(root==NULL)
+    {
+        root=newnode(idata);
+        cout<<"Hurray! node inserted"<<endl;
+    }
+    else if(root->data<=idata)
+    {
+        root->right=insert(root->right,idata);
+    }
+    else 
+    {
+        root->left=insert(root->left,idata);
+    }
+    return root;
+}
+void traverse_preorder(tree *root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    cout<<root->data<<"->";
+    traverse_preorder(root->left);
+    traverse_preorder(root->right);
+}
+int height(tree *root)
+{
+    if(root==NULL)
+    {
+        return -1;
+    }
+    return max(height(root->left),height(root->right)+1);
+}
+void min(tree *root)
+{
+    if(root==NULL)
+    {
+        cout<<"No node exists"<<endl;
+    }
+    else if(root->left==NULL)
+    {
+        cout<<root->data<<endl;
+    }
+    else
+    {
+        min(root->left);
+    }
+}
+void level(tree *root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    queue<tree*> q;
+    tree *current;
+    q.push(root);
+    while(!q.empty())
+    {
+        current=q.front();
+        cout<<current->data<<"->";
+        if(current->left!=NULL)
+        {
+            q.push(current->left);
+        }
+        if(current->right!=NULL)
+        {
+            q.push(current->right);
+        }
+        q.pop();
+    }
+}
+bool search(tree *root,int ele)
+{
+    if(root==NULL)
+    {
+        return false;
+    }
+    else if(root->data==ele)
+    {
+        return true;
+    }
+    else if(root->data<ele)
+    {
+        return search(root->right,ele);
+    }
+    else
+    {
+        return search(root->left,ele);
+    } 
+}
+int main()
+{
+    tree *root=NULL;
+    int data,n,i;
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+        cin>>data;
+        root=insert(root,data);
+    }
+    traverse_preorder(root);
+    cout<<endl;
+    level(root);
+    int ele;
+    cout<<"\nElement to be search : "<<endl;
+    cin>>ele;
+    if(search(root,ele)==true)
+    {
+        cout<<"Found"<<endl;
+    }
+    else
+    {
+        cout<<"Wrong element"<<endl;
+    }
+    min(root);
+    cout<<height(root)<<endl;
+    return 0; 
+}
