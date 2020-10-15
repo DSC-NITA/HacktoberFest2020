@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct Node                           //structure for the node of the tree
+{
+    int data;
+    struct Node* left;
+    struct Node* right;
+    
+    Node(int x){                      // parameterized constructor for the tree node
+        data = x;
+        left = right = NULL;
+    }
+};
+Node* mirror(Node* &node)             //Function for converting the binary tree into its mirror image
+{                                     // node of the tree is passed as a reference as we want the changes to be reflected in the original tree as well
+     if(node==NULL)
+     return NULL;
+     Node* temp=node->left;
+     node->left=mirror(node->right);  //Pointing right child of original tree to left 
+     node->right=mirror(temp);        //Pointing left child of original tree to right
+     return node;                     //Return node of the new mirror tree
+}
+void preorder(Node* root)             //function to display the tree in preorder traversal
+{
+    if(root==NULL)
+    return;
+    cout<<root->data<<" ";
+    preorder(root->left);
+    preorder(root->right);
+}
+int main()
+{
+    Node* root=new Node(1);          //       1
+    root->left=new Node(2);          //    2     3
+    root->right=new Node(3);
+    mirror(root);                    //tree converted to its mirror image
+    preorder(root);                  
+    return 0;                        //       1
+}                                    //    3     2
