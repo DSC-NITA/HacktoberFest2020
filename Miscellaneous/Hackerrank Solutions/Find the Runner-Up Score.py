@@ -1,4 +1,4 @@
-if __name__ == '__main__':
+def main():
     n = int(raw_input())
     arr = map(int, raw_input().split())
     arr.sort()
@@ -8,3 +8,5 @@ if __name__ == '__main__':
         if(arr1[0]==arr1[i]):
              i+=1
     print(arr1[i+1])
+if __name__ == '__main__':
+    main()
