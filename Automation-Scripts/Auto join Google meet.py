@@ -19,18 +19,29 @@ driver.implicitly_wait(5)
 meet_link ="Meeting link"
 
 # Authenticating via stackoverflow
-driver.get("https://stackoverflow.com/users/login")
-driver.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click()
-wait=WebDriverWait(driver, 10)
-wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id=\"identifierId\"]"))).send_keys("Your Gmail")
-driver.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
-wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id=\"password\"]/div[1]/div/div[1]/input"))).send_keys("Your Password")
-driver.find_element_by_xpath("//*[@id=\"passwordNext\"]/div/button/div[2]").click()
+def authenticate_stackoverflow()
+{
+    driver.get("https://stackoverflow.com/users/login")
+    driver.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click()
+    wait=WebDriverWait(driver, 10)
+    wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id=\"identifierId\"]"))).send_keys("Your Gmail")
+    driver.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
+    wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id=\"password\"]/div[1]/div/div[1]/input"))).send_keys("Your Password")
+    driver.find_element_by_xpath("//*[@id=\"passwordNext\"]/div/button/div[2]").click()
+}
+
 
 # important it takes time to load Stackoverflow so adjust according to your internet speed(time in sec)
-time.sleep(10) 
+
 
 # Opening Meeting after logging in
-driver.get(meet_link)
-wait.until(EC.element_to_be_clickable((By.XPATH,"//*[@id=\"yDmH0d\"]/div[3]/div/div[2]/div[3]/div/span/span"))).click()
-wait.until(EC.element_to_be_clickable((By.XPATH,"//*[@id=\"yDmH0d\"]/c-wiz/div/div/div[4]/div[3]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/span/span"))).click()
+def open_meet()
+{
+    driver.get(meet_link)
+    wait.until(EC.element_to_be_clickable((By.XPATH,"//*[@id=\"yDmH0d\"]/div[3]/div/div[2]/div[3]/div/span/span"))).click()
+    wait.until(EC.element_to_be_clickable((By.XPATH,"//*[@id=\"yDmH0d\"]/c-wiz/div/div/div[4]/div[3]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/span/span"))).click()
+}
+
+authenticate_stackoverflow()
+time.sleep(10) 
+open_meet()
