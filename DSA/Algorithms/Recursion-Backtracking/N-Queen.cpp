@@ -1,79 +1,120 @@
-#include <iostream>
-#include <cstring>
+Problem Statement:-
+	N-Queen Problem
+        You are given N, and for a given N x N chessboard, find a way to place N queens such that no queen can attack any other queen on the chess board. 
+	A queen can be killed when it lies in the same row, or same column, or the same diagonal of any of the other queens. You have to print all such configurations.
+Input Format :
+Line 1 : Integer N
+Output Format :
+One Line for every board configuration. 
+Every line will have N*N board elements printed row wise and are separated by space
+Note : Don't print anything if there isn't any valid configuration.
+Constraints :
+1<=N<=10
+Sample Input 1:
+4
+Sample Output 1 :
+0 1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 
+0 0 1 0 1 0 0 0 0 0 0 1 0 1 0 0 
+
+
+
+#include<bits/stdc++.h>
 using namespace std;
-
-// Declaring a global board
-int board[10][10];
-
-// Function to check if queen can be placed in given cell
-bool isSafe(int row, int col,int n)
+    //To print the matrix
+void printer(int** arr, int n)
 {
-    // Checking for other queen vertically in each column
-    for(int i=0;i<col;i++)
-        if (board[row][i])
-            return false;
-    
-     // Checking for other queen horizontally in each row
-    for(int i=row, j=col;i>=0 && j>=0 ;i-- , j--)
-        if (board[i][j])
-            return false;
-    
-     // Checking for other queen diagonally
-    for(int i=row, j=col;i<n && j>=0 ;i++ , j--)
-        if (board[i][j])
-            return false;
-    
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+	}
+    cout << endl;
 }
-
-// Function to place n Queens on the board 
-void NQueenRec(int col,int n)
+  // To check that whether i can put queen at at particular index of row and coloumn or not
+bool checker(int **arr,int row,int col,int n)
 {
-    // Returning -1 as no solution exists for n = 2 and n = 3
-    if(n==2 || n==3)
-    {
-        cout<<-1;
-        return;
-    }
-    if(col>=n)
-    {
-        //Printing the board
-        cout<<"[";
-        for(int i=0;i<n;i++)
-            {
-                for(int j=0;j<n;j++){
-                    if(board[j][i] == 1)
-                        cout<<j+1<<" ";}
-            }
-            cout<<"]"<<" ";
-            return;
-    }
-    
-    // Placing Queens on the board recursively
-    for(int i=0;i<n;i++)
-    {
-        if(isSafe(i,col,n))
-        {
-            board[i][col]=1;
-            NQueenRec(col+1,n);
-            board[i][col]=0;
 
+// Checking Same Column
+    for(int i=row-1;i>=0;i--)
+    {
+        if(arr[i][col] == 1)
+        {
+            return false;
         }
     }
-    return ;
+//Checking Upper Left Diagonal
+    for(int i=row-1,j=col-1;i>=0 && j>=0 ; i--,j--)
+    {
+        if(arr[i][j] ==1)
+        {
+            return false;
+        }
+    }
+
+  // Checking Upper Right Diagonal
+
+    for(int i=row-1,j=col+1;i>=0 && j<n ; i--,j++)
+    {
+        if(arr[i][j] == 1)
+        {
+            return false;
+        }
+    }
+    // If none of above is an obstacle then we should return true 
+  return true;
 }
-
-int main() {
-	int t;
-	cin>>t;
-	while(t--)
+       // To place all the queens
+void placer(int** arr, int row, int n)
+{
+	// If the row equals to n it means we have filled all the rows and reached to n so
+	// time to print the output by calling or print function we made on top
+	if (row == n)
 	{
-	    int n;
-	    cin>>n;
-
-        // Initializing board values to 0 before solving 
-	    memset(board,0,sizeof(board));
-	    NQueenRec(0,n);
-	    cout<<endl;
+		printer(arr, n);
+		return;
 	}
-	return 0;
+	// for each coloumn we are passing rows and checking all possible arrangements.
+    for(int j=0;j<n;j++)
+    {
+        if(checker(arr,row,j,n))
+        {
+            arr[row][j] = 1;
+            placer(arr,row+1,n);
+		// when we will return to this position time to make it 0 and move to next coloumn and check out remaining possiblity.
+            arr[row][j] = 0;
+        }
+    }
+    return;
+}
+void placeNQueens(int n)
+{
+	// Declared a 2-d Array to store all the correct positions and initialised it with zero
+	int** arr = new int* [n];
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = new int[n];
+		for (int j = 0; j < n; j++)
+		{
+			arr[i][j] = 0;
+		}
+	}
+	// Called a Helper function by passing it our 2-d array and n.
+     placer(arr, 0, n); 
+	// Deleted the 2-D array we made to release all the occupied space.
+    for(int i=0; i<n; i++)
+    {
+        delete[]arr[i];
+    }
+    delete[]arr;
+}
+int main()
+{
+
+  int n; 
+  cin >> n ;
+  placeNQueens(n);
+  return 0;
+
 }
