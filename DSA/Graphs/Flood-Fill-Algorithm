@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+int dx[4]={-1,0,1,0};
+int dy[4]={0,-1,0,1};
+int n,m;
+ bool isValid(int x,int y)
+ {
+    if(x>=0 && y>=0 && x<n && y<m)
+    return true;
+    return false;
+ }
+  
+  void DFSRec(vector<vector<int>> &a,int oldcol,int newcol,int x,int y)
+  {
+      if(!isValid(x,y) || a[x][y]!=oldcol)
+        return;
+        
+        a[x][y]=newcol;
+        
+      for(int i=0;i<4;i++)
+      {
+          DFSRec(a,oldcol,newcol,x+dx[i],y+dy[i]);
+      }
+  }
+  
+int main()
+ {
+ int t;
+ cin>>t;
+  while(t--)
+ {
+      int x,y,oldcol,newcol;
+      cin>>n>>m;
+      vector<vector<int>> a(n,vector<int>(m));
+      for(int i=0;i<n;i++)
+      {
+          for(int j=0;j<m;j++)
+          {
+              cin>>a[i][j];
+          }
+      }
+      cin>>x>>y>>newcol;
+      oldcol=a[x][y];
+      DFSRec(a,oldcol,newcol,x,y);
+        
+      
+     
+      for(int i=0;i<n;i++)
+      {
+          for(int j=0;j<m;j++)
+          {
+              cout<<a[i][j]<<" ";
+          }
+      }
+      cout<<endl;
+ }
+	return 0;
+}
